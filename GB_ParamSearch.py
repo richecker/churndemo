@@ -26,14 +26,14 @@ n_estimators_ = int(sys.argv[2])
 
 
 # Import Data
-df = pd.read_csv('/mnt/data/prepared.csv', header=0, index_col=0)
+df = pd.read_csv('/mnt/data/customer_churn_data/prepared.csv', header=0, index_col=0)
 columns = list(df.columns)
 columns.remove('churn_Y')
 y = df["churn_Y"].values
 X = df[columns].values
 
 # baseline data
-df_baseline = pd.read_csv('/mnt/data/churndata.csv', header=0, index_col=0)
+df_baseline = pd.read_csv('/mnt/data/customer_churn_data/churndata.csv', header=0, index_col=0)
 create_dummies = pd.get_dummies(df_baseline['churn'],prefix='churn', drop_first=True)  
 df_baseline=pd.concat([df_baseline,create_dummies],axis=1)
 df_baseline = df_baseline.drop(['churn'], axis=1)
