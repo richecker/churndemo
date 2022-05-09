@@ -1,0 +1,231 @@
+                                                           The SAS System                 Thursday, October 21, 2021 03:20:00 PM   1
+                                                       Using KNN on Iris Data
+
+                                                       The DISCRIM Procedure
+
+                       Total Sample Size                   75          DF Total                            74
+                       Variables                            4          DF Within Classes                   72
+                       Classes                              3          DF Between Classes                   2
+
+
+                                             Number of Observations Read             75
+                                             Number of Observations Used             75
+
+
+                                                      Class Level Information
+ 
+                                        Variable                                                    Prior
+                          Species       Name          Frequency       Weight    Proportion    Probability
+
+                          Setosa        Setosa               29      29.0000      0.386667       0.333333
+                          Versicolor    Versicolor           21      21.0000      0.280000       0.333333
+                          Virginica     Virginica            25      25.0000      0.333333       0.333333
+                                                           The SAS System                 Thursday, October 21, 2021 03:20:00 PM   2
+                                                       Using KNN on Iris Data
+
+                                                       The DISCRIM Procedure
+                                      Classification Results for Calibration Data: WORK.IRIS2
+                                         Resubstitution Results using 15 Nearest Neighbors
+
+                                                     Squared Distance Function
+
+                                                     2                  -1     
+                                                    D (X,Y) = (X-Y)' COV  (X-Y)
+
+                                        Posterior Probability of Membership in Each Species
+
+                                          m (X) = Proportion of obs in group k in 15      
+                                           k      nearest neighbors of X                  
+
+                                           Pr(j|X) = m (X) PRIOR  / SUM ( m (X) PRIOR  )
+                                                      j         j    k     k         k  
+
+
+                                          Posterior Probability of Membership in Species
+ 
+                                   From          Classified
+                            Obs    Species       into Species        Setosa    Versicolor     Virginica
+
+                             51    Virginica     Versicolor *        0.0000        0.7042        0.2958
+                             62    Virginica     Versicolor *        0.0000        0.5102        0.4898
+
+                                                  * Misclassified observation    
+                                                           The SAS System                 Thursday, October 21, 2021 03:20:00 PM   3
+                                                       Using KNN on Iris Data
+
+                                                       The DISCRIM Procedure
+                                      Classification Summary for Calibration Data: WORK.IRIS2
+                                         Resubstitution Summary using 15 Nearest Neighbors
+
+                                                     Squared Distance Function
+
+                                                     2                  -1     
+                                                    D (X,Y) = (X-Y)' COV  (X-Y)
+
+                                        Posterior Probability of Membership in Each Species
+
+                                          m (X) = Proportion of obs in group k in 15      
+                                           k      nearest neighbors of X                  
+
+                                           Pr(j|X) = m (X) PRIOR  / SUM ( m (X) PRIOR  )
+                                                      j         j    k     k         k  
+
+
+                                    Number of Observations and Percent Classified into Species
+ 
+                                From
+                                Species          Setosa      Versicolor      Virginica        Total
+
+                                Setosa               29               0              0           29
+                                                 100.00            0.00           0.00       100.00
+
+                                Versicolor            0              21              0           21
+                                                   0.00          100.00           0.00       100.00
+
+                                Virginica             0               2             23           25
+                                                   0.00            8.00          92.00       100.00
+
+                                Total                29              23             23           75
+                                                  38.67           30.67          30.67       100.00
+
+                                Priors          0.33333         0.33333        0.33333             
+                                                                                                   
+
+                                                 Error Count Estimates for Species
+ 
+                                                    Setosa    Versicolor    Virginica       Total
+
+                                  Rate              0.0000        0.0000       0.0800      0.0267
+                                  Priors            0.3333        0.3333       0.3333            
+                                                           The SAS System                 Thursday, October 21, 2021 03:20:00 PM   4
+                                                       Using KNN on Iris Data
+
+                                                       The DISCRIM Procedure
+                                      Classification Results for Calibration Data: WORK.IRIS2
+                                        Cross-validation Results using 15 Nearest Neighbors
+
+                                                     Squared Distance Function
+
+                                                     2                  -1     
+                                                    D (X,Y) = (X-Y)' COV  (X-Y)
+
+                                        Posterior Probability of Membership in Each Species
+
+                                          m (X) = Proportion of obs in group k in 15      
+                                           k      nearest neighbors of X                  
+
+                                           Pr(j|X) = m (X) PRIOR  / SUM ( m (X) PRIOR  )
+                                                      j         j    k     k         k  
+
+
+                                          Posterior Probability of Membership in Species
+ 
+                                   From          Classified
+                            Obs    Species       into Species        Setosa    Versicolor     Virginica
+
+                             33    Versicolor    Virginica  *        0.0000        0.4545        0.5455
+                             51    Virginica     Versicolor *        0.0000        0.6957        0.3043
+                             62    Virginica     Other      T        0.0000        0.5000        0.5000
+
+                                                  * Misclassified observation    
+                                                  T Tie for largest probability  
+                                                           The SAS System                 Thursday, October 21, 2021 03:20:00 PM   5
+                                                       Using KNN on Iris Data
+
+                                                       The DISCRIM Procedure
+                                      Classification Summary for Calibration Data: WORK.IRIS2
+                                        Cross-validation Summary using 15 Nearest Neighbors
+
+                                                     Squared Distance Function
+
+                                                     2                  -1     
+                                                    D (X,Y) = (X-Y)' COV  (X-Y)
+
+                                        Posterior Probability of Membership in Each Species
+
+                                          m (X) = Proportion of obs in group k in 15      
+                                           k      nearest neighbors of X                  
+
+                                           Pr(j|X) = m (X) PRIOR  / SUM ( m (X) PRIOR  )
+                                                      j         j    k     k         k  
+
+
+                                     Number of Observations and Percent Classified into Species
+ 
+                          From
+                          Species          Setosa      Versicolor      Virginica        Other        Total
+
+                          Setosa               29               0              0            0           29
+                                           100.00            0.00           0.00         0.00       100.00
+
+                          Versicolor            0              20              1            0           21
+                                             0.00           95.24           4.76         0.00       100.00
+
+                          Virginica             0               1             23            1           25
+                                             0.00            4.00          92.00         4.00       100.00
+
+                          Total                29              21             24            1           75
+                                            38.67           28.00          32.00         1.33       100.00
+
+                          Priors          0.33333         0.33333        0.33333                          
+                                                                                                          
+
+                                                 Error Count Estimates for Species
+ 
+                                                    Setosa    Versicolor    Virginica       Total
+
+                                  Rate              0.0000        0.0476       0.0800      0.0425
+                                  Priors            0.3333        0.3333       0.3333            
+                                                           The SAS System                 Thursday, October 21, 2021 03:20:00 PM   6
+                                                       Using KNN on Iris Data
+
+                                                       The DISCRIM Procedure
+                                          Classification Summary for Test Data: WORK.IRIS2
+                                         Classification Summary using 15 Nearest Neighbors
+
+                                                     Squared Distance Function
+
+                                                     2                  -1     
+                                                    D (X,Y) = (X-Y)' COV  (X-Y)
+
+                                        Posterior Probability of Membership in Each Species
+
+                                          m (X) = Proportion of obs in group k in 15      
+                                           k      nearest neighbors of X                  
+
+                                           Pr(j|X) = m (X) PRIOR  / SUM ( m (X) PRIOR  )
+                                                      j         j    k     k         k  
+
+
+                                                 Observation Profile for Test Data
+
+                                             Number of Observations Read             75
+                                             Number of Observations Used             75
+
+
+                                    Number of Observations and Percent Classified into Species
+ 
+                                From
+                                Species          Setosa      Versicolor      Virginica        Total
+
+                                Setosa               21               0              0           21
+                                                 100.00            0.00           0.00       100.00
+
+                                Versicolor            0              29              0           29
+                                                   0.00          100.00           0.00       100.00
+
+                                Virginica             0               2             23           25
+                                                   0.00            8.00          92.00       100.00
+
+                                Total                21              31             23           75
+                                                  28.00           41.33          30.67       100.00
+
+                                Priors          0.33333         0.33333        0.33333             
+                                                                                                   
+
+                                                 Error Count Estimates for Species
+ 
+                                                    Setosa    Versicolor    Virginica       Total
+
+                                  Rate              0.0000        0.0000       0.0800      0.0267
+                                  Priors            0.3333        0.3333       0.3333            
